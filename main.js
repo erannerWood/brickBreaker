@@ -12,6 +12,7 @@
         
         let input = document.createElement('input')
         input.type = 'number'
+        input.step = '25'
         holder.appendChild(input)
         let speedMessage = document.createElement('h1')
         speedMessage.textContent = "Please set your speed."
@@ -38,6 +39,15 @@
 
 
         button.addEventListener('click', () => {
+            if(input.value <25){
+                alert('You must have a minimum of 25 boxes!')
+                return
+            }
+
+            if(input.value % 25 !== 0){
+                alert('You must enter numbers in increments of 25!')
+                return
+            }
             let pace = 0
             if(speed.value === 'SLOW'){
                 pace = 1000
