@@ -42,7 +42,7 @@
             if(speed.value === 'SLOW'){
                 pace = 1000
             } else if (speed.value === 'MODERATE'){
-                pace = 50
+                pace = 100
             } else if (speed.value === 'FAST'){
                 pace = 1
             }
@@ -56,10 +56,14 @@
             for(let i=0; i< number; i++){
             let boxers = document.createElement('div')
             boxers.classList.add('box')
+
             boxers.id = `box${i + 1}`
             container.appendChild(boxers)
+                if(number > 10000){
+                    boxers.style.outline = 'none'
+                }
             boxes.push(boxers)
-            
+
         }
         function brickBreaker(one){
             one.style.backgroundColor = 'transparent'
